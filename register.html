@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Register</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   <style>
+      body {
+         background-image: url('https://img.freepik.com/free-photo/office-desk-workspace-bright-color-yellow-background_169016-38713.jpg');
+         background-size: cover;
+         background-repeat: no-repeat;
+      }
+   </style>   
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a class="logo">Edufree</a>
+      
+
+
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         
+         
+         
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">Login</a>
+            
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="https://clipground.com/images/education-logo-vector-clipart.jpg" class="image" alt="">
+      <h3 class="name"><b>Edufree</b></h3>
+      <p style="font-size: 25px;" > Edufree offers a wide range of educational materials, including textbooks, lecture notes, tutorials, and practice exercises across various subjects and academic levels. Users can access these resources at no cost, making education more accessible to learners worldwide</p>
+   </div>
+
+
+
+</div>
+
+<section class="form-container">
+
+   <form action="http://localhost/myapp/process_registration.php" method="post" >
+      <h3>Register Now</h3>
+      <p>Your Name <span>*</span></p>
+      <input type="text" name="username" placeholder="Enter your name" required maxlength="50" class="box">
+      <p>Your Email <span>*</span></p>
+      <input type="email" name="email" placeholder="Enter your email" required maxlength="50" class="box">
+      
+      <p>Occupation</p>
+      <input type="text" name="occupation" placeholder="Enter your occupation" maxlength="50" class="box">
+      <p>Name of the School</p>
+      <input type="text" name="school_name" placeholder="Enter your school name" maxlength="100" class="box">
+      <p>High School Marks Obtained</p>
+      <input type="number" name="high_school_marks" placeholder="Enter your high school marks" class="box">
+      <p>Intermediate Marks Obtained</p>
+      <input type="number" name="intermediate_marks" placeholder="Enter your intermediate marks" class="box">
+      <p>Address</p>
+      <textarea name="address" placeholder="Enter your address" class="box"></textarea>
+      <p>Your Password <span>*</span></p>
+      <input type="password" name="password" placeholder="Enter your password" required maxlength="20" class="box">
+      <p>Confirm Password <span>*</span></p>
+      <input type="password" name="c_password" placeholder="Confirm your password" required maxlength="20" class="box">
+      
+      <input type="submit" value="Register Now" name="submit" class="btn">
+</form>
+<script>
+   function redirectToHome() {
+       window.location.href = "http://localhost/myapp/process_registration.php";
+   }
+</script>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; Copyright © 2023 <span>Edufree</span> All Rights Reserved.
+
+
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+   
+</body>
+</html>

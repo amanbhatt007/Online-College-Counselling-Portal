@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   
+   <style>
+      .background-container {
+         background-image: url('https://t4.ftcdn.net/jpg/01/65/98/53/360_F_165985319_GPU5ALSAgJkkJ0rRE2V1d8plcen3aANg.jpg');
+         background-size: cover;
+         background-position: center;
+         padding: 20px;
+      }
+
+      .box-container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 20px;
+      }
+      .box {
+         text-align: center;
+      }
+
+      /* New style for allocated branch */
+      .allocated-branch {
+         text-align: center;
+         margin-top: 20px;
+      }
+
+      .allocated-branch {
+         text-align: center;
+         margin-top: 20px;
+      }
+      .allocated-branch input[type="text"],
+      .allocated-branch button {
+         padding: 10px;
+         margin: 5px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         font-size: 16px;
+         transition: all 0.3s ease;
+      }
+      .allocated-branch button {
+         background-color: #007bff;
+         color: #fff;
+         cursor: pointer;
+      }
+      .allocated-branch button:hover {
+         background-color: #0056b3;
+      }
+      .allocated-branch p {
+         margin-top: 10px;
+         font-size: 18px;
+         color: #333;
+      }
+
+   </style>
+
+</head>
+<body>
+<!-- Header Section -->
+<header class="header">
+   <section class="flex">
+      <a href="home.html" class="logo">Edufree</a>
+      <!-- Add a catchy headline and call-to-action button -->
+      <div class="headline">
+         <h1>Discover Your Path in Education</h1>
+         <a href="about.html" class="cta-btn">Get Started</a>
+      </div>
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">        
+         <p class="role">student</p>
+         <a href="profile.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">Login</a>
+            <a href="register.html" class="option-btn">Register</a>
+         </div>
+      </div>
+   </section>
+</header>
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="https://clipground.com/images/education-logo-vector-clipart.jpg" class="image" alt="">
+      <h3 class="name">Edufree</h3>
+   </div>
+
+   
+
+</div>
+
+
+<section class="home-grid">
+   <!-- Box Container -->
+   <div id="box-container" class="box-container">
+      <div class="box-container">
+
+         <div class="box">
+            <h3 class="title">Fill your Highschool and Intermediate Marks</h3>
+            <p class="likes">Marks</p>
+            <a href="marks.html" class="inline-btn">Submit</a>
+         </div> 
+
+      </div>
+
+      
+</section>
+
+   <!-- Allocated Branch Section -->
+   <div class="allocated-branch">
+      <h2>Branch Allocation Process</h2>
+      <p>Complete the form below to get your allocated branch:</p>
+      <form>
+         <input type="text" id="usernameInput" placeholder="Enter your username">
+         <button onclick="fetchAllocatedBranch()">See Allocated Branch</button>
+      </form>
+      <p id="allocatedBranchText"></p>
+   </div>
+
+
+
+<script src="script.js"></script>
+<script>
+   function fetchAllocatedBranch() {
+      var username = document.getElementById("usernameInput").value;
+
+      // Construct the URL with the username
+      var url = "http://localhost/myapp/fetch_allocated_branch.php?username=" + username;
+
+      // Open the URL in a new tab/window
+      window.open(url, "_blank");
+   }
+</script>
+
+</body>
+</html>

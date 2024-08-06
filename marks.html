@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Marks</title>
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   <style>
+      body {
+         background-image: url('https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg');
+         background-size: cover;
+         background-repeat: no-repeat;
+      }
+      .branch-dropdown-content {
+         display: none;
+      }
+      .branch-dropdown-content.show {
+         display: block;
+      }
+      .selected-branch {
+         display: inline-block;
+         padding: 5px 10px;
+         margin-right: 5px;
+         background-color: #f0f0f0;
+         border-radius: 5px;
+      }
+      .close-button {
+         cursor: pointer;
+         margin-left: 5px;
+         color: red;
+      }
+   </style>
+</head>
+<body>
+
+<header class="header">   
+   <section class="flex">
+      <a href="home.html" class="logo">Edufree</a>
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">        
+         <p class="role">student</p>
+         <a href="profile.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">Login</a>
+            <a href="register.html" class="option-btn">Register</a>
+         </div>
+      </div>
+   </section>
+</header>   
+
+<div class="side-bar">
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+   <div class="profile">
+      <img src="https://clipground.com/images/education-logo-vector-clipart.jpg" class="image" alt="">
+      <h3 class="name">Edufree</h3>
+   </div>
+   
+</div>
+
+<section class="home-grid">
+   <section class="form-container">
+      <form action="http://localhost/myapp/marks.php" method="post">
+         <p>Username</p>
+         <input type="text" name="username" placeholder="Enter your username" class="box">
+         <h3>Highschool</h3>
+         <p>Highschool Marks Obtained</p>
+         <input type="number" name="highschool_marks" placeholder="Enter your Highschool marks" class="box">
+         <h3>Intermediate</h3>
+         <p>Physics Marks Obtained</p>
+         <input type="number" name="physics_marks" placeholder="Enter your physics marks" class="box">
+         <p>Chemistry Marks Obtained</p>
+         <input type="number" name="chemistry_marks" placeholder="Enter your chemistry marks" class="box">
+         <p>Maths Marks Obtained</p>
+         <input type="number" name="math_marks" placeholder="Enter your math marks" class="box">
+         <h3>Choose a Branch (Field 1)</h3>
+         <label><input type="radio" name="branch_1" value="Computer Science Engineering"> Computer Science Engineering</label><br>
+         <label><input type="radio" name="branch_1" value="Electronics Engineering"> Electronics Engineering</label><br>
+         <label><input type="radio" name="branch_1" value="Mechanical Engineering"> Mechanical Engineering</label><br>
+         <h3>Choose a Branch (Field 2)</h3>
+         <label><input type="radio" name="branch_2" value="Civil Engineering"> Civil Engineering</label><br>
+         <label><input type="radio" name="branch_2" value="Electrical Engineering"> Electrical Engineering</label><br>
+         <label><input type="radio" name="branch_2" value="Chemical Engineering"> Chemical Engineering</label><br>
+         <h3>Choose a Branch (Field 3)</h3>
+         <label><input type="radio" name="branch_3" value="Aerospace Engineering"> Aerospace Engineering</label><br>
+         <label><input type="radio" name="branch_3" value="Biomedical Engineering"> Biomedical Engineering</label><br>
+         <label><input type="radio" name="branch_3" value="Industrial Engineering"> Industrial Engineering</label><br>
+         <input type="submit" value="Submit" name="submit" class="btn">
+      </form>
+   </section>
+</section>
+
+<footer class="footer">
+   &copy; Copyright © 2023 <span>Educare</span> All Rights Reserved.
+</footer>
+
+<script>
+function toggleBranchDropdown(branchDropdownId) {
+    var branchDropdown = document.getElementById(branchDropdownId);
+    if (branchDropdown.classList.contains("show")) {
+        branchDropdown.classList.remove("show");
+    } else {
+        branchDropdown.classList.add("show");
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const branchLabel = document.querySelector(".branch-label");
+    const branchCheckboxes = document.querySelectorAll('input[name="selected_branches[]"]');
+    
+    branchCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener("change", function() {
+            const selectedBranches = Array.from(branchCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+            
+            if (selectedBranches.length >= 3) {
+                branchLabel.textContent = "Selected Branches: " + selectedBranches.join(", ");
+            } else {
+                branchLabel.textContent = "Select at least three branches";
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
